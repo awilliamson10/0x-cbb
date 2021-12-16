@@ -10,7 +10,7 @@ if (!MONGODB_URI) {
 
 // check the MongoDB DB
 if (!MONGODB_DB) {
-  throw new Error("Define the MONGODB_DB environmental variable")
+  throw new Error("Defin the MONGODB_DB environmental variable")
 }
 
 let cachedClient = null
@@ -33,6 +33,7 @@ export async function connectToDatabase() {
   }
 
   // Connect to cluster
+  // @ts-ignore
   let client = new MongoClient(MONGODB_URI, opts)
   await client.connect()
   let db = client.db(MONGODB_DB)
