@@ -1,7 +1,6 @@
 pymongo
 sportsipy
 datetime
-pickle
 pandas
 numpy
 sklearn
