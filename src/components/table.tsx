@@ -3,7 +3,6 @@ const people = [
   {
     name: "Jane Cooper",
     title: "Regional Paradigm Technician",
-    department: "Optimization",
     role: "Admin",
     email: "jane.cooper@example.com",
     image:
