@@ -15,9 +15,9 @@ export default function Home({ games }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex justify-center min-h-screen py-20 bg-gradient-to-b from-gray-50 via-gray-50 to-gray-100">
+      <main className="flex justify-center min-h-screen py-10 bg-gradient-to-b from-gray-50 via-gray-50 to-gray-100">
         <div>
-          <h1 className="px-5 text-4xl font-bold leading-tight tracking-tight text-center sm:mt-4 sm:text-6xl">
+          <h1 className="px-5 text-2xl font-bold leading-tight tracking-tight text-center sm:mt-4 sm:text-6xl">
             Today's Games
           </h1>
 
