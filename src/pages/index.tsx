@@ -8,13 +8,9 @@ export default function Home({ games }) {
   return (
     <div>
       <Head>
-        <title>Next.js advanced start template.</title>
+        <title>0xCBB</title>
 
-        <meta
-          name="description"
-          content="Use tailwind css, eslint, prettier & absolute imports instantly.
-            Easily extendable zero-config template for pros and beginners."
-        />
+        <meta name="description" content="NCAABB Predictions" />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -33,9 +29,9 @@ export default function Home({ games }) {
               Built by{" "}
               <a
                 className="font-medium text-blue-600 transition duration-150 ease-in-out hover:text-blue-500 focus:outline-none focus:underline"
-                href="https://twitter.com/autonomouswill"
+                href="https://twitter.com/0xAwill"
               >
-                @autonomouswill
+                @0xAwill
               </a>
             </p>
           </div>
