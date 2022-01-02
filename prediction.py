@@ -10,7 +10,7 @@ svr_model = pickle.load(open(filename, 'rb'))
 
 games_today = Boxscores(datetime.today())
 today = pd.DataFrame()
-for game in games_today.games[datetime.today().strftime('%m-%d-%Y')]:
+for game in games_today.games[datetime.today().strftime('%-m-%-d-%Y')]:
     matchup = {'home': game['home_abbr'].upper(), 'away': game['away_abbr'].upper()}
     today = today.append(matchup, ignore_index=True)
 
