@@ -16,5 +16,6 @@ if __name__ == "__main__":
   all_teams = get_team_stats.getStats(2022)
   league = score_similarity.score_similarity(2022, all_teams)
   todays_lines = prediction.predictToday(league)
+  todays_lines = todays_lines.sort_values('time')
   print(todays_lines)
   save_data_to_mongo(todays_lines)

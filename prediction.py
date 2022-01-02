@@ -14,6 +14,11 @@ for game in games_today.games[datetime.today().strftime('%-m-%-d-%Y')]:
     matchup = {'home': game['home_abbr'].upper(), 'away': game['away_abbr'].upper()}
     today = today.append(matchup, ignore_index=True)
 
+
+def mdy_to_date(d):
+    return datetime.strptime(d, '%b %d, %Y').strftime('%-m-%-d-%Y')
+
+
 def gameScoring(schedule, team, opponent, league_similarity):
     games = pd.DataFrame()
     for game in schedule:
@@ -44,6 +49,14 @@ def gameScoring(schedule, team, opponent, league_similarity):
     average_stats = scaled_games.mean(axis=0)
     return average_stats
 
+
+def getGameTime(schedule):
+    for gn in [i for i, s in enumerate(list(schedule)) if 'maryland' in str(s)]:
+        if mdy_to_date(schedule[gn].date[5:]) == datetime.today().strftime('%-m-%-d-%Y'):
+            return(schedule[gn].time)
+    return 'NA'
+
+
 def predictToday(league_similarity):
   test_set = pd.DataFrame()
   for matchup in today.iterrows():
@@ -70,6 +83,7 @@ def predictToday(league_similarity):
     temp = temp.to_frame().T.join(temp2.to_frame().T, rsuffix="_opp")
     temp['team'] = team
     temp['opponent'] = opponent
+    temp['time'] = getGameTime(schedule)
     test_set = test_set.append(temp)
   test_set.replace([np.inf, -np.inf], np.nan, inplace=True)
   test_set.fillna(0, inplace=True)
